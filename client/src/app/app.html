@@ -1,0 +1,19 @@
+<div class="flex flex-col min-h-screen bg-gray-100 font-sans">
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 text-center">
+      <h1 class="text-3xl font-bold text-gray-800">Stock Learning Assistant</h1>
+      <p class="text-gray-600 mt-1">Your guide to the world of finance</p>
+    </div>
+  </header>
+
+  <main class="flex-grow container mx-auto px-6 py-8">
+    <router-outlet></router-outlet>
+    <app-chatbot></app-chatbot>
+  </main>
+
+  <footer class="bg-white mt-8 py-4">
+    <div class="container mx-auto px-6 text-center">
+      <p class="text-gray-500 text-sm">&copy; 2025 Stock Learning Inc.</p>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,64 @@
+<!-- src/app/chatbot/chatbot.component.html -->
+
+<div class="chat-container bg-white rounded-xl shadow-lg flex flex-col h-full">
+  <!-- Header -->
+  <div
+    class="chat-header bg-gradient-to-r from-blue-700 to-blue-900 text-white p-4 text-center text-xl font-bold rounded-t-xl"
+  >
+    Stock Learning Assistant
+  </div>
+
+  <!-- Messages container -->
+  <div
+    #chatMessagesContainer
+    class="chat-messages flex-grow p-4 overflow-y-auto flex flex-col gap-3 bg-gray-50"
+  >
+    <!-- Message bubbles -->
+    <div
+      *ngFor="let message of messages"
+      class="message-bubble p-3 rounded-lg max-w-[80%] break-words shadow-sm"
+      [ngClass]="{
+        'bg-blue-500 text-white self-end rounded-br-none': message.sender === 'user',
+        'bg-gray-200 text-gray-800 self-start rounded-bl-none': message.sender === 'ai'
+      }"
+    >
+      <!-- Render user messages as plain text -->
+      <ng-container *ngIf="message.sender === 'user'">
+        {{ message.text }}
+      </ng-container>
+
+      <!-- Render AI messages with formatting -->
+      <ng-container *ngIf="message.sender === 'ai'">
+        <span [innerHTML]="formatMessage(message.text)"></span>
+      </ng-container>
+    </div>
+
+    <!-- Loading indicator -->
+    <div
+      *ngIf="isLoading"
+      class="loading-indicator self-center text-gray-500 italic text-sm mt-2"
+    >
+      Thinking...
+    </div>
+  </div>
+
+  <!-- Input area -->
+  <div
+    class="chat-input-area flex p-4 border-t border-gray-200 bg-white rounded-b-xl"
+  >
+    <input
+      type="text"
+      [(ngModel)]="newMessage"
+      (keyup.enter)="sendMessage()"
+      placeholder="Ask me about stocks..."
+      class="chat-input flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200 text-base"
+    />
+    <button
+      (click)="sendMessage()"
+      [disabled]="isLoading || !newMessage.trim()"
+      class="send-button ml-3 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md transition-all duration-200 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+    >
+      Send
+    </button>
+  </div>
+</div>

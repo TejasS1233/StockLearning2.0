@@ -1,0 +1,51 @@
+/* src/app/chatbot/chatbot.component.css - Styles for the chatbot component */
+
+.chat-container {
+  height: 100%; /* Ensure the container takes full height of its parent */
+  min-height: 500px; /* Minimum height for the chatbot */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chat-messages {
+  max-height: calc(
+    100% - 140px
+  ); /* Adjust based on header and input area height */
+  overflow-y: auto;
+  scroll-behavior: smooth; /* Smooth scrolling for new messages */
+}
+
+/* Custom scrollbar for Webkit browsers */
+.chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.message-bubble.user-message {
+  border-radius: 0.75rem 0.75rem 0.25rem 0.75rem; /* Top-left, Top-right, Bottom-right, Bottom-left */
+}
+
+.message-bubble.ai-message {
+  border-radius: 0.75rem 0.75rem 0.75rem 0.25rem; /* Top-left, Top-right, Bottom-right, Bottom-left */
+}
+
+.chat-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.send-button:hover {
+  filter: brightness(1.1);
+}

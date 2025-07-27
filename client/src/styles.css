@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+:root {
+  --background-color: #0f172a; /* A dark slate color */
+  --text-accent-color: #38bdf8;   /* A bright blue */
+  --text-color: #e2e8f0;       /* A light gray/white */
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Helper classes from your friend's project */
+.bg-background {
+  background-color: var(--background-color);
+}
+
+.text-accent {
+  color: var(--text-accent-color);
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem; /* 16px */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
