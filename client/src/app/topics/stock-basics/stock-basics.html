@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Market Basics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Example config to define a custom 'accent' color
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              accent: '#38bdf8', // light blue
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-gray-900">
+
+  <div class="min-h-screen bg-gray-900 text-gray-200 p-4 sm:p-8 max-w-4xl mx-auto">
+    
+    <div class="mb-8">
+        <a routerLink="/topics" class="text-accent hover:underline">← Back to Topics</a>
+    </div>
+
+    <h1 class="text-4xl font-extrabold mb-4 text-white">📈 Stock Market Basics</h1>
+    <p class="text-lg text-gray-400 mb-8">
+        Learn the fundamentals of how stock markets operate, essential terms, and what you need to get started on your investment journey.
+    </p>
+    
+    <p class="text-gray-300 leading-relaxed mb-6">
+        The share market is where you can buy and sell parts of a company, known as <strong class="text-white">stocks</strong> or <strong class="text-white">shares</strong>. It's a popular way to invest and grow your wealth over time. The term <strong class="text-white">share market</strong> typically refers to trading only in company shares. The broader <strong class="text-white">stock market</strong> includes shares but also other financial instruments like <strong class="text-white">bonds, mutual funds, and derivatives</strong>.
+    </p>
+
+    <p class="text-gray-300 leading-relaxed mb-6">
+        In India, trading happens on official platforms called <strong class="text-white">stock exchanges</strong>. For a stock to be traded, it must be listed on an exchange. The two primary exchanges in India are:
+    </p>
+    <ul class="list-disc list-inside space-y-2 mb-12 bg-gray-800/50 p-4 rounded-lg">
+        <li>Bombay Stock Exchange (BSE)</li>
+        <li>National Stock Exchange (NSE)</li>
+    </ul>
+
+    <hr class="my-12 border-gray-700">
+
+    <div id="statistics">
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-accent">📊 Market Snapshot: Growth & Performance</h2>
+        <p class="text-gray-400 mb-6">The Indian stock market has seen remarkable growth in participation, showcasing increasing investor confidence.</p>
+
+        <h3 class="text-xl font-semibold text-white mb-2">Growth of Retail Investors (Demat Accounts)</h3>
+        <p class="text-gray-400 mb-4">The number of Demat accounts is a great indicator of how many people are investing. The growth has been explosive, especially in recent years.</p>
+        <pre class="bg-gray-800 p-4 rounded-lg font-mono text-sm text-gray-300 overflow-x-auto mb-8">
+    (Approx. number of accounts in India)
+
+2023:  |■■■■■■■■■■■■■■■■■■■■| 115 Million
+2024:  |■■■■■■■■■■■■■■■■■■■■■■■■■| 151 Million
+2025:  |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 190+ Million (Projected)
+        </pre>
+
+        <h3 class="text-xl font-semibold text-white mb-2">Sample Index Performance Over 12 Months</h3>
+        <p class="text-gray-400 mb-4">Stock market indices (like the Nifty 50 or Sensex) show the overall market trend. They don't move in a straight line; they have ups and downs, but the long-term trend has historically been upward.</p>
+        <pre class="bg-gray-800 p-4 rounded-lg font-mono text-sm text-gray-300 overflow-x-auto">
+Index Value
+24,000 +                    /-----\
+       |                   /       \
+22,000 +        /---------/         \
+       |       /                     \
+       |      /                       \----
+20,000 +-----/
+       +------------------------------------->
+         Q1       Q2         Q3        Q4
+<span class="text-gray-500">*This graph illustrates typical market volatility and growth throughout a year.</span>
+        </pre>
+    </div>
+
+    <hr class="my-12 border-gray-700">
+
+    <div id="market-types">
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-accent">📜 Types of Share Markets</h2>
+        <div class="space-y-6">
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-2">Primary Market</h3>
+                <p class="text-gray-300 leading-relaxed">This is where a company first offers its shares to the public to raise money. This process is called an <strong class="text-white">Initial Public Offering (IPO)</strong>. Think of it as buying a new product directly from the manufacturer for the first time.</p>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-white mb-2">Secondary Market</h3>
+                <p class="text-gray-300 leading-relaxed">This is what most people refer to as the "stock market." Here, investors buy and sell stocks from each other at prevailing market prices. The company is not directly involved in these transactions. Prices are set by supply and demand.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-12 border-gray-700">
+
+    <div id="how-to-invest">
+        <h2 class="text-3xl font-bold mt-12 mb-6 text-accent">🚀 How to Invest: A Step-by-Step Guide</h2>
+        <ol class="list-decimal list-outside space-y-6 pl-5">
+            <li>
+                <strong class="text-white">Select a Reputed Broker.</strong>
+                <p class="text-gray-400">Choose a trading firm registered with the <strong class="text-white">SEBI</strong> (Securities and Exchange Board of India). Your broker provides the platform and tools you need to trade.</p>
+            </li>
+            <li>
+                <strong class="text-white">Open Demat and Trading Accounts.</strong>
+                <p class="text-gray-400">A <strong class="text-white">Demat Account</strong> holds your shares in electronic form. A <strong class="text-white">Trading Account</strong> is used to place buy and sell orders. These are linked to your bank account.</p>
+            </li>
+            <li>
+                <strong class="text-white">Add Funds to Your Trading Account.</strong>
+                <p class="text-gray-400">Transfer the money you wish to invest from your bank account to your trading account. This will be your starting capital.</p>
+            </li>
+            <li>
+                <strong class="text-white">Research and Choose Your Stocks.</strong>
+                <p class="text-gray-400">Don't invest based on rumors! Look at a company's financial health, its position in the industry, and future growth potential.</p>
+            </li>
+            <li>
+                <strong class="text-white">Decide on Your Investment Amount.</strong>
+                <p class="text-gray-400">Figure out how much you're comfortable investing. It's wise to <strong class="text-white">diversify</strong> your investment across different stocks to manage risk.</p>
+            </li>
+            <li>
+                <strong class="text-white">Place a Purchase Order.</strong>
+                <p class="text-gray-400">You can buy a stock at its current market price (a <strong class="text-white">market order</strong>) or set a specific price you're willing to pay (a <strong class="text-white">limit order</strong>).</p>
+            </li>
+            <li>
+                <strong class="text-white">Execute the Order.</strong>
+                <p class="text-gray-400">Once you confirm your purchase, your broker executes the order. The shares will soon appear in your Demat Account.</p>
+            </li>
+            <li>
+                <strong class="text-white">Track Your Investments.</strong>
+                <p class="text-gray-400">Regularly monitor your portfolio. Keep up with market news and company performance to decide when to hold or sell your stocks.</p>
+            </li>
+        </ol>
+    </div>
+
+    <hr class="my-12 border-gray-700">
+
+    <div id="cta" class="bg-gray-800/50 p-8 rounded-xl text-center">
+        <h2 class="text-3xl font-bold mb-4 text-accent">💼 Start Your Investment Journey With Us</h2>
+        <p class="text-gray-300 max-w-2xl mx-auto mb-6">We provide top-of-the-line facilities to help you navigate the share market with confidence. Our Demat and Trading accounts give you access to robust research, expert guidance, and quick, efficient trading mechanisms.</p>
+        
+        <a routerLink="/signup" class="inline-block bg-accent hover:bg-sky-400 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+            Open an Account!
+        </a>
+    </div>
+
+    <div class="mt-16 pt-8 border-t border-gray-700">
+        <p class="text-xs text-gray-500 italic mb-6">
+            Disclaimer: Terms and conditions apply. This is an informational communication and should not be considered a suggestion for investment. Investments in the securities market are subject to market risks; read all related documents carefully before investing.
+        </p>
+        <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+            <a href="#" class="hover:text-white">Contact Us</a>
+            <a href="#" class="hover:text-white">FAQs</a>
+            <a href="#" class="hover:text-white">Insta Service</a>
+            <a href="#" class="hover:text-white">Locate Nearest Branch/ATM</a>
+            <a href="#" class="hover:text-white">Report Unauthorised Transaction</a>
+        </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

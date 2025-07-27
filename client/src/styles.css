@@ -1,30 +1,42 @@
 @import "tailwindcss";
 
+/* Root colors */
 :root {
-  --background-color: #0f172a; /* A dark slate color */
-  --text-accent-color: #38bdf8;   /* A bright blue */
-  --text-color: #e2e8f0;       /* A light gray/white */
+  --bg-primary: #0f172a;  /* Dark Slate */
+  --bg-secondary: #1e293b;
+  --text-primary: #e2e8f0; /* Light Gray */
+  --text-accent: #38bdf8; /* Blue Accent */
 }
 
-body {
+/* Global Reset & Dark Background */
+html, body {
   margin: 0;
+  height: 100%;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   font-family: 'Inter', sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
 }
 
-/* Helper classes from your friend's project */
-.bg-background {
-  background-color: var(--background-color);
+/* Links */
+a {
+  color: var(--text-accent);
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: #7dd3fc;
 }
 
-.text-accent {
-  color: var(--text-accent-color);
+/* Scrollbar (Optional) */
+::-webkit-scrollbar {
+  width: 8px;
 }
-
-.glass-effect {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem; /* 16px */
-  border: 1px solid rgba(255, 255, 255, 0.1);
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }

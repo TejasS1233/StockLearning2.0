@@ -20,12 +20,11 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
   styleUrls: ['./chatbot.css'],
 })
 export class Chatbot implements OnInit, OnDestroy, AfterViewChecked {
-  @ViewChild('chatMessagesContainer')
-  private chatMessagesContainer!: ElementRef;
+  @ViewChild('chatMessagesContainer') private chatMessagesContainer!: ElementRef;
 
   messages: Message[] = [];
-  newMessage: string = '';
-  isLoading: boolean = false;
+  newMessage = '';
+  isLoading = false;
   private chatSubscription!: Subscription;
 
   constructor(
@@ -35,7 +34,9 @@ export class Chatbot implements OnInit, OnDestroy, AfterViewChecked {
 
   ngOnInit(): void {
     this.messages.push({
-      text: "Hello! I'm your AI Stock Learning Assistant. How can I help you learn about stocks today? Ask me about market basics, investment strategies, or specific terms!",
+      text: `Hello! I'm your AI Stock Learning Assistant. 
+      How can I help you learn about stocks today? 
+      Ask me about market basics, investment strategies, or specific terms!`,
       sender: 'ai',
     });
   }
@@ -46,9 +47,7 @@ export class Chatbot implements OnInit, OnDestroy, AfterViewChecked {
 
   sendMessage(): void {
     const userMessage = this.newMessage.trim();
-    if (userMessage === '') {
-      return;
-    }
+    if (!userMessage) return;
 
     this.messages.push({ text: userMessage, sender: 'user' });
     this.newMessage = '';
@@ -73,11 +72,9 @@ export class Chatbot implements OnInit, OnDestroy, AfterViewChecked {
   }
 
   private scrollToBottom(): void {
-    try {
+    if (this.chatMessagesContainer) {
       this.chatMessagesContainer.nativeElement.scrollTop =
         this.chatMessagesContainer.nativeElement.scrollHeight;
-    } catch (err) {
-      console.error('Could not scroll to bottom:', err);
     }
   }
 
@@ -87,6 +84,7 @@ export class Chatbot implements OnInit, OnDestroy, AfterViewChecked {
     }
   }
 
+  // This function properly formats the AI's response for display
   public formatMessage(text: string): SafeHtml {
     const bolded = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     const withLineBreaks = bolded.replace(/\n/g, '<br>');

@@ -9,7 +9,8 @@ if (!process.env.GEMINI_API_KEY) {
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-router.post('/chatbot', async (req, res) => {
+// The path is changed from '/chatbot' to '/'
+router.post('/', async (req, res) => {
   try {
     const { message } = req.body;
 

@@ -1,0 +1,50 @@
+<div class="p-4 sm:p-8 min-h-screen bg-gray-900 text-gray-100">
+  <h1 class="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center sm:text-left">
+    Investment Strategies - Top Gainers Today
+  </h1>
+
+  <!-- Filter Buttons -->
+  <div class="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-6 justify-center sm:justify-start">
+    <button 
+      *ngFor="let cat of categories"
+      (click)="loadData(cat.key)"
+      [class.bg-blue-600]="currentCategory===cat.key"
+      class="bg-gray-800 px-3 sm:px-4 py-2 rounded hover:bg-gray-700 text-sm sm:text-base">
+      {{cat.label}}
+    </button>
+  </div>
+
+  <!-- Table (Visible on md and above) -->
+  <div class="hidden md:block overflow-x-auto">
+    <table class="min-w-full text-sm text-left text-gray-300">
+      <thead class="bg-gray-800 text-gray-400 uppercase">
+        <tr>
+          <th class="px-4 py-3">Company</th>
+          <th class="px-4 py-3">Market Price (1D)</th>
+          <th class="px-4 py-3">Volume</th>
+        </tr>
+      </thead>
+      <tbody class="bg-gray-800 divide-y divide-gray-700">
+        <tr *ngFor="let stock of stocks">
+          <td class="px-4 py-3">{{stock.company}}</td>
+          <td class="px-4 py-3">
+            ₹{{stock.price}}
+            <br>
+            <span class="text-sm text-gray-500">{{stock.change}}</span>
+          </td>
+          <td class="px-4 py-3">{{stock.volume}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Card View (Visible on small screens) -->
+  <div class="grid grid-cols-1 gap-4 md:hidden">
+    <div *ngFor="let stock of stocks" class="bg-gray-800 rounded p-4 shadow">
+      <h2 class="text-lg font-semibold mb-2">{{stock.company}}</h2>
+      <p class="text-gray-400 mb-1">Market Price: <span class="text-gray-100">₹{{stock.price}}</span></p>
+      <p class="text-gray-500 text-sm mb-2">{{stock.change}}</p>
+      <p class="text-gray-400">Volume: <span class="text-gray-100">{{stock.volume}}</span></p>
+    </div>
+  </div>
+</div>

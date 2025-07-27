@@ -1,0 +1,13 @@
+/* home.css */
+section p {
+  line-height: 1.75;
+}
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.glass-effect h1 {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+} 

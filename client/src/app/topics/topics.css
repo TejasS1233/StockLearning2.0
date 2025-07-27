@@ -1,0 +1,9 @@
+/* Dark themed layout for Topics */
+h1 {
+  letter-spacing: 1px;
+}
+
+a {
+  font-weight: 500;
+  transition: color 0.2s ease;
+}

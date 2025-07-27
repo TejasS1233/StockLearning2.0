@@ -30,8 +30,13 @@ mongoose
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
-const apiRoutes = require("./routes/api");
-app.use("/api", apiRoutes);
+// Import Routes
+const authRoutes = require("./routes/auth");
+const chatbotRoutes = require("./routes/api"); // <-- Import the new chatbot route
+
+// Use Routes
+app.use("/api/auth", authRoutes);
+app.use("/api/chatbot", chatbotRoutes); // <-- Tell Express to use the chatbot route
 
 if (process.env.NODE_ENV === "production") {
   app.use(

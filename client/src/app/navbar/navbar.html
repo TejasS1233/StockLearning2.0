@@ -1,0 +1,65 @@
+<!-- We use the async pipe to subscribe to the currentUser$ observable from the auth service -->
+<!-- This container will handle showing the correct version of the navbar based on login state -->
+<ng-container *ngIf="currentUser$ | async as user; else loggedOut">
+
+  <!-- NAVBAR: SHOWN WHEN A USER IS LOGGED IN -->
+  <nav class="bg-gray-800 text-gray-100 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-6 py-3">
+      <!-- Logo -->
+      <a routerLink="/" class="text-2xl font-bold text-white hover:text-blue-400">Stock Learning</a>
+
+      <!-- Links -->
+      <ul class="hidden md:flex space-x-6 text-gray-300 font-medium">
+        <li><a routerLink="/" routerLinkActive="text-blue-400" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/topics" routerLinkActive="text-blue-400">Topics</a></li>
+        <li><a routerLink="/chat" routerLinkActive="text-blue-400">Chatbot</a></li>
+      </ul>
+
+      <!-- User Info & Logout Button -->
+      <div class="flex items-center space-x-4">
+        <span class="text-green-400 font-semibold">Hello, {{ user.name }}</span>
+        <button (click)="logout()" class="px-4 py-2 border border-red-500 text-red-500 rounded hover:bg-red-500 hover:text-white transition">
+          Logout
+        </button>
+      </div>
+
+      <!-- Mobile menu icon (optional) -->
+      <div class="md:hidden">
+        <!-- Add mobile menu toggle if needed -->
+      </div>
+    </div>
+  </nav>
+
+</ng-container>
+
+<!-- TEMPLATE: SHOWN WHEN NO USER IS LOGGED IN -->
+<ng-template #loggedOut>
+  <nav class="bg-gray-800 text-gray-100 shadow-md">
+    <div class="container mx-auto flex justify-between items-center px-6 py-3">
+      <!-- Logo -->
+      <a routerLink="/" class="text-2xl font-bold text-white hover:text-blue-400">Stock Learning</a>
+
+      <!-- Links -->
+      <ul class="hidden md:flex space-x-6 text-gray-300 font-medium">
+        <li><a routerLink="/" routerLinkActive="text-blue-400" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+        <li><a routerLink="/topics" routerLinkActive="text-blue-400">Topics</a></li>
+        <li><a routerLink="/chat" routerLinkActive="text-blue-400">Chatbot</a></li>
+      </ul>
+
+      <!-- Auth Buttons -->
+      <div class="flex space-x-4">
+        <a routerLink="/login" class="px-4 py-2 border border-blue-500 text-blue-500 rounded hover:bg-blue-500 hover:text-white transition">
+          Login
+        </a>
+        <a routerLink="/signup" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+          Sign Up
+        </a>
+      </div>
+
+      <!-- Mobile menu icon (optional) -->
+      <div class="md:hidden">
+        <!-- Add mobile menu toggle if needed -->
+      </div>
+    </div>
+  </nav>
+</ng-template>

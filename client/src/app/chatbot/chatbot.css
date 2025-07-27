@@ -1,17 +1,21 @@
-/* src/app/chatbot/chatbot.component.css - Styles for the chatbot component */
+/* src/app/chatbot/chatbot.component.css - Dark Theme Styles for the chatbot component */
 
 .chat-container {
-  height: 100%; /* Ensure the container takes full height of its parent */
-  min-height: 500px; /* Minimum height for the chatbot */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  min-height: 500px;
+  background-color: #1f2937; /* Dark gray background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-radius: 0.5rem;
+  color: #f9fafb; /* Light text */
 }
 
 .chat-messages {
-  max-height: calc(
-    100% - 140px
-  ); /* Adjust based on header and input area height */
+  max-height: calc(100% - 140px);
   overflow-y: auto;
-  scroll-behavior: smooth; /* Smooth scrolling for new messages */
+  scroll-behavior: smooth;
+  background-color: #111827; /* Slightly darker area for messages */
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
 /* Custom scrollbar for Webkit browsers */
@@ -20,25 +24,43 @@
 }
 
 .chat-messages::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #1f2937;
   border-radius: 10px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #4b5563;
   border-radius: 10px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #6b7280;
 }
 
 .message-bubble.user-message {
-  border-radius: 0.75rem 0.75rem 0.25rem 0.75rem; /* Top-left, Top-right, Bottom-right, Bottom-left */
+  background-color: #2563eb; /* Blue bubble for user */
+  color: #fff;
+  border-radius: 0.75rem 0.75rem 0.25rem 0.75rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .message-bubble.ai-message {
-  border-radius: 0.75rem 0.75rem 0.75rem 0.25rem; /* Top-left, Top-right, Bottom-right, Bottom-left */
+  background-color: #374151; /* Dark gray bubble for AI */
+  color: #f9fafb;
+  border-radius: 0.75rem 0.75rem 0.75rem 0.25rem;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.chat-input {
+  background-color: #111827;
+  color: #f9fafb;
+  border: 1px solid #374151;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  width: 100%;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .chat-input:focus {
@@ -46,6 +68,16 @@
   box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
 }
 
+.send-button {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
 .send-button:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.2);
 }
